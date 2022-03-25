@@ -13,6 +13,7 @@ DATABASE_HOST = os.environ['DATABASE_HOST']
 DATABASE_PORT = os.environ['DATABASE_PORT']
 DATABASE_USER = os.environ['DATABASE_USER']
 DATABASE_NAME = os.environ['DATABASE_NAME']
+DATABASE_PASSWORD = os.environ['DATABASE_PASSWORD']
 
 os.environ['LIBMYSQL_ENABLE_CLEARTEXT_PLUGIN'] = '1'
 
@@ -30,10 +31,9 @@ try:
     mydb =  mysql.connector.connect(
         host=DATABASE_HOST,
         user=DATABASE_USER,
-        passwd=token,
+        passwd=DATABASE_PASSWORD,
         port=DATABASE_PORT,
-        database=DATABASE_NAME,
-        ssl_ca=DATABASE_CERT
+        database=DATABASE_NAME
     )
 except Exception as e:
     print('Database connection failed due to {}'.format(e))          
