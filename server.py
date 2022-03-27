@@ -27,7 +27,7 @@ try:
         DBUsername=DATABASE_USER,
         Region=DATABASE_REGION
     )
-    mydb =  mysql.connector.connect(
+    mydb = mysql.connector.connect(
         host=DATABASE_HOST,
         user=DATABASE_USER,
         passwd=token,
